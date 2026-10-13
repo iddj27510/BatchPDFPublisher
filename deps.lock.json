@@ -1,0 +1,97 @@
+{
+  "$comment": "Dependency lock manifest for Batch PDF Publisher. This is the human-editable source of truth for runtime dependencies. Build-SBOM.ps1 reads this file, verifies each path resolves, and computes SHA-256 hashes from the actual files. Do not edit sbom.cdx.json by hand — regenerate it via Build-SBOM.ps1.",
+  "manifestVersion": 1,
+  "project": {
+    "name": "BatchPDFPublisher",
+    "author": "Jugoslav Ilić",
+    "email": "engilic@gmail.com",
+    "version": "9.25.32",
+    "host": "Autodesk Inventor 2027",
+    "runtime": "VBA 7.1",
+    "distribution": "VBA source (bas/cls/frm)"
+  },
+  "dependencies": [
+    {
+      "name": "VBA",
+      "group": "Microsoft",
+      "version": "7.1",
+      "purl": "pkg:generic/microsoft/vba@7.1",
+      "license": "Proprietary",
+      "type": "library",
+      "scope": "required",
+      "coverage": "runtime",
+      "source": "Windows 7+ (built-in)",
+      "paths": [
+        "C:\\Program Files\\Common Files\\Microsoft Shared\\VBA\\VBA7.1\\VBE7.DLL"
+      ]
+    },
+    {
+      "name": "Inventor",
+      "group": "Autodesk",
+      "version": "2027",
+      "purl": "pkg:generic/autodesk/inventor@2027",
+      "license": "Proprietary",
+      "type": "library",
+      "scope": "required",
+      "coverage": "runtime",
+      "source": "Autodesk Inventor 2026 or 2027",
+      "paths": [
+        "C:\\Program Files\\Autodesk\\Inventor 2027\\Bin\\RxInventor.tlb",
+        "C:\\Program Files\\Autodesk\\Inventor 2026\\Bin\\RxInventor.tlb"
+      ]
+    },
+    {
+      "name": "stdole",
+      "group": "Microsoft",
+      "version": "2.0",
+      "purl": "pkg:generic/microsoft/stdole@2.0",
+      "license": "Proprietary",
+      "type": "library",
+      "scope": "required",
+      "coverage": "runtime",
+      "source": "Windows 7+ (built-in)",
+      "paths": [
+        "C:\\Windows\\System32\\stdole2.tlb"
+      ]
+    },
+    {
+      "name": "MSForms",
+      "group": "Microsoft",
+      "version": "2.0",
+      "purl": "pkg:generic/microsoft/msforms@2.0",
+      "license": "Proprietary",
+      "type": "library",
+      "scope": "required",
+      "coverage": "runtime",
+      "source": "Microsoft Office (VFS path varies by Office bitness and version)",
+      "paths": [
+        "C:\\Program Files\\Microsoft Office\\root\\VFS\\System\\x86\\FM20.DLL",
+        "C:\\Program Files\\Microsoft Office\\root\\VFS\\System\\FM20.DLL",
+        "C:\\Program Files (x86)\\Microsoft Office\\root\\VFS\\System\\x86\\FM20.DLL",
+        "C:\\Program Files (x86)\\Microsoft Office\\root\\VFS\\System\\FM20.DLL",
+        "C:\\Windows\\System32\\FM20.DLL",
+        "C:\\Windows\\SysWOW64\\FM20.DLL"
+      ]
+    }
+  ],
+  "knownUnknowns": [
+    {
+      "category": "transitive",
+      "description": "Inventor API transitive COM components are not enumerated. The RxInventor.tlb type library is a facade over a large set of Autodesk COM servers whose specific versions are determined at runtime by the Inventor installation."
+    },
+    {
+      "category": "runtime-resolved",
+      "description": "PDF Translator AddIn GUID is not resolved at build time. The AddIn is discovered at runtime via ApplicationAddIns.ItemById(PDF_GUID) with enumeration fallback (see modPDFFileIO.PDF_FindAddIn)."
+    },
+    {
+      "category": "platform-native",
+      "description": "Windows COM components (Scripting.FileSystemObject, Scripting.Dictionary, System.Collections.ArrayList, ADODB.Stream, Shell.Application, htmlfile, OLE DataObject, WScript.Shell) are provided by the OS. Their versions track Windows Update and are outside SBOM scope."
+    }
+  ],
+  "notes": [
+    "To add a dependency: add a new entry to the 'dependencies' array with name, version, purl, license, and a non-empty 'paths' array.",
+    "Build-SBOM.ps1 will fail if any path in 'paths' is not found on the build machine (unless -AllowMissingHashes is passed).",
+    "Hashes are computed at build time from the actual files. Never hand-edit hashes into this file.",
+    "Registry of resolved components ends up in sbom.cdx.json. That file is the generated artifact — do not edit it."
+  ]
+}

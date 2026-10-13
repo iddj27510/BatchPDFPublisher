@@ -1,0 +1,225 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:9c93ca86-47ed-4ca0-accc-e98372027884",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-13T16:25:21Z",
+    "authors": [
+      {
+        "name": "Jugoslav Ilić"
+      }
+    ],
+    "supplier": {
+      "name": "Internal"
+    },
+    "tools": [
+      {
+        "vendor": "BatchPDFPublisher",
+        "name": "Build-SBOM.ps1",
+        "version": "2.4.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "BatchPDFPublisher",
+      "version": "9.25.32",
+      "author": "Jugoslav Ilić",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f314005bf3328fccf70ae1915654dde3ab011150690ba0f4bd36fcfe1260415b"
+        }
+      ],
+      "properties": [
+        {
+          "value": "D:\\Projects\\LinkedIn, Inventor\\- - VBA\\VBA-DR-01\\src",
+          "name": "Source_Folder"
+        },
+        {
+          "value": "55",
+          "name": "Source_File_Count"
+        },
+        {
+          "value": "VBA source (bas/cls/frm)",
+          "name": "Distribution_Model"
+        },
+        {
+          "value": "Autodesk Inventor 2027",
+          "name": "Host_Application"
+        },
+        {
+          "value": "VBA 7.1",
+          "name": "Runtime"
+        },
+        {
+          "value": "1",
+          "name": "SBOM_Version"
+        },
+        {
+          "value": "release",
+          "name": "Generation_Context"
+        },
+        {
+          "value": "D:\\Projects\\LinkedIn, Inventor\\- - VBA\\VBA-DR-01\\deps.lock.json",
+          "name": "BOM_Manifest_Source"
+        },
+        {
+          "value": "f2e848a7c64252a966e68970efab1fc7369ed18b66d725be78adc341b8e87167",
+          "name": "SBOM_Author_Signature_SHA256"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "VBA",
+      "group": "Microsoft",
+      "version": "7.1",
+      "purl": "pkg:generic/microsoft/vba@7.1",
+      "author": "Microsoft",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5af52c26a0cb4c2ac0a158cd6b673bca68234bde42675ad7e7a107c56923ffdd"
+        }
+      ],
+      "scope": "required",
+      "coverage": "runtime",
+      "properties": [
+        {
+          "value": "Windows 7+ (built-in)",
+          "name": "Source"
+        },
+        {
+          "value": "C:\\Program Files\\Common Files\\Microsoft Shared\\VBA\\VBA7.1\\VBE7.DLL",
+          "name": "Resolved_Path"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "Inventor",
+      "group": "Autodesk",
+      "version": "2027",
+      "purl": "pkg:generic/autodesk/inventor@2027",
+      "author": "Autodesk",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "37d4e2f731d12c49778eb898093ec01f25de21039812e8a8c303c4273d4d99e1"
+        }
+      ],
+      "scope": "required",
+      "coverage": "runtime",
+      "properties": [
+        {
+          "value": "Autodesk Inventor 2026 or 2027",
+          "name": "Source"
+        },
+        {
+          "value": "C:\\Program Files\\Autodesk\\Inventor 2027\\Bin\\RxInventor.tlb",
+          "name": "Resolved_Path"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "stdole",
+      "group": "Microsoft",
+      "version": "2.0",
+      "purl": "pkg:generic/microsoft/stdole@2.0",
+      "author": "Microsoft",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "815d6c50ad934a42800e52faef5207dd9352ab8c386793422682084c8f604c5d"
+        }
+      ],
+      "scope": "required",
+      "coverage": "runtime",
+      "properties": [
+        {
+          "value": "Windows 7+ (built-in)",
+          "name": "Source"
+        },
+        {
+          "value": "C:\\Windows\\System32\\stdole2.tlb",
+          "name": "Resolved_Path"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "MSForms",
+      "group": "Microsoft",
+      "version": "2.0",
+      "purl": "pkg:generic/microsoft/msforms@2.0",
+      "author": "Microsoft",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4047e28a10d44be9a0849885df34b5e3a5076e6935c8e679ce5e25540d5dfd52"
+        }
+      ],
+      "scope": "required",
+      "coverage": "runtime",
+      "properties": [
+        {
+          "value": "Microsoft Office (VFS path varies by Office bitness and version)",
+          "name": "Source"
+        },
+        {
+          "value": "C:\\Program Files\\Microsoft Office\\root\\VFS\\System\\FM20.DLL",
+          "name": "Resolved_Path"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:generic/batchpdfpublisher@9.25.32",
+      "dependsOn": [
+        "pkg:generic/microsoft/vba@7.1",
+        "pkg:generic/autodesk/inventor@2027",
+        "pkg:generic/microsoft/stdole@2.0",
+        "pkg:generic/microsoft/msforms@2.0"
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "value": "[{\"category\":\"transitive\",\"description\":\"Inventor API transitive COM components are not enumerated. The RxInventor.tlb type library is a facade over a large set of Autodesk COM servers whose specific versions are determined at runtime by the Inventor installation.\"},{\"category\":\"runtime-resolved\",\"description\":\"PDF Translator AddIn GUID is not resolved at build time. The AddIn is discovered at runtime via ApplicationAddIns.ItemById(PDF_GUID) with enumeration fallback (see modPDFFileIO.PDF_FindAddIn).\"},{\"category\":\"platform-native\",\"description\":\"Windows COM components (Scripting.FileSystemObject, Scripting.Dictionary, System.Collections.ArrayList, ADODB.Stream, Shell.Application, htmlfile, OLE DataObject, WScript.Shell) are provided by the OS. Their versions track Windows Update and are outside SBOM scope.\"}]",
+      "name": "cisa:known_unknowns"
+    }
+  ]
+}
