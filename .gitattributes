@@ -1,0 +1,24 @@
+# Default: normalize all text files to LF in the repo, checkout as native
+* text=auto
+
+# Windows-only project - CRLF on checkout
+*.bas text eol=crlf
+*.cls text eol=crlf
+*.frm text eol=crlf
+*.ps1 text eol=crlf
+*.md  text eol=crlf
+*.json text eol=crlf
+
+# Binary - no conversion
+*.frx binary
+*.ivb binary
+*.dvb binary
+*.pdf binary
+*.dwg binary
+*.idw binary
+*.ipt binary
+*.iam binary
+
+# Git housekeeping files - always LF
+.gitignore text eol=lf
+.gitattributes text eol=lf

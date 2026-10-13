@@ -1,0 +1,71 @@
+# Compiled VBA project - binary blob, tracked via src/ instead
+*.ivb
+*.dvb
+
+# Form binary resources - needed to reconstruct forms from .frm
+# Uncommented intentionally: .frx files are required to restore forms
+# with images/icons intact.
+# *.frx
+
+# Dev-only diagnostic tools - never commit
+**/a_modDev.bas
+
+# Runtime artifacts
+*.log
+*.bak
+*.tmp
+_tmp_*
+_export_report.txt
+
+# Sandbox artifacts (created at runtime in %TEMP%\VBADR\)
+_instance.lock
+diag_*.txt
+crash_*.txt
+
+# Test fixtures - kept on disk, not in Git (too large, ~107 MB total)
+# Regenerate from releases or distribute separately via Git LFS
+T01_HappyPath/
+T04_Recursive/
+T05_Collision/
+T07_ErrorHandling/
+T10_MultiSheet/
+T11_DWG/
+
+# Keep the empty-folder placeholder
+!T08_EmptyFolder/.gitkeep
+
+# Test output PDFs (in case fixtures ever get tracked)
+T01_HappyPath/*.pdf
+T04_Recursive/*.pdf
+T05_Collision/*.pdf
+T07_ErrorHandling/*.pdf
+T10_MultiSheet/*.pdf
+T11_DWG/*.pdf
+
+# Legacy exports (historical files, not built)
+docs/legacy/*.bas
+docs/legacy/*.frm
+docs/legacy/*.cls
+
+# Backup and release artifacts
+backups/
+docs/_backup_src_*/
+build/
+temp/
+releases/*.ivb
+releases/*.zip
+.~*/
+
+# OS junk
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor junk
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+# Inventor sample fixtures (same class as T01-T11)
+TestPackage/
