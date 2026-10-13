@@ -1,5 +1,13 @@
 # Batch PDF Publisher
 
+[![Version](https://img.shields.io/badge/version-9.25.32-blue?style=flat-square)](CHANGELOG.md)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+[![Inventor](https://img.shields.io/badge/Inventor-2026%20%7C%202027-orange?style=flat-square)](https://www.autodesk.com/products/inventor/)
+[![VBA](https://img.shields.io/badge/VBA-7.1-purple?style=flat-square)](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/visual-basic-for-applications)
+[![Tests](https://img.shields.io/badge/tests-49%20passed-brightgreen?style=flat-square)](src/modTests.bas)
+[![i18n](https://img.shields.io/badge/i18n-13%20languages-blueviolet?style=flat-square)](src/modLang.bas)
+[![Last commit](https://img.shields.io/github/last-commit/iddj27510/BatchPDFPublisher?style=flat-square&label=last%20commit)](https://github.com/iddj27510/BatchPDFPublisher/commits/main)
+
 VBA add-in for Autodesk Inventor 2027. Bulk-converts `.idw` drawings
 to PDF. Per-file report with filters and search. Optional drawing audit.
 
