@@ -1,6 +1,6 @@
 # INVENTOR_2027_NOTES.md - VBA-DR-01 Batch PDF Publisher
 
-**Version:** 9.25.32
+**Version:** 9.25.42
 **Last updated:** 2026-10-04
 
 Notes on Inventor 2027 API compatibility, add-in manifest requirements,
@@ -29,7 +29,7 @@ future version could skip regeneration of views that don't need
 updating, reducing save time on large assemblies.
 
 **Action:** Evaluate in a future minor release. Not required for
-v9.25.32.
+v9.25.42.
 
 ---
 
@@ -55,7 +55,7 @@ Inventor 2027 add-ins.
 ### Manifest template
 
 `docs/legacy/BatchPDFPublisher.addin.template` is the v8.0 template.
-For v9.25.32 compiled deployment, use:
+For v9.25.42 compiled deployment, use:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

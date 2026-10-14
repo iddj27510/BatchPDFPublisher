@@ -1,10 +1,10 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:9c93ca86-47ed-4ca0-accc-e98372027884",
+  "serialNumber": "urn:uuid:41d900d3-c559-4a5b-92a9-aa53e251eaf4",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-10-13T16:25:21Z",
+    "timestamp": "2026-10-14T15:15:51Z",
     "authors": [
       {
         "name": "Jugoslav Ilić"
@@ -23,12 +23,12 @@
     "component": {
       "type": "application",
       "name": "BatchPDFPublisher",
-      "version": "9.25.32",
+      "version": "9.25.42",
       "author": "Jugoslav Ilić",
       "hashes": [
         {
-          "alg": "SHA-256",
-          "content": "f314005bf3328fccf70ae1915654dde3ab011150690ba0f4bd36fcfe1260415b"
+          "content": "f74c8a7a706eaee27a5b575a9efc2f98b39e6c7b19ff20df5943c19e15b3f740",
+          "alg": "SHA-256"
         }
       ],
       "properties": [
@@ -65,7 +65,7 @@
           "name": "BOM_Manifest_Source"
         },
         {
-          "value": "f2e848a7c64252a966e68970efab1fc7369ed18b66d725be78adc341b8e87167",
+          "value": "c6f5aec2a646a4f405a566a998bf81cffb0bbf831649b1b39b32154aff34a848",
           "name": "SBOM_Author_Signature_SHA256"
         }
       ]
@@ -88,8 +88,8 @@
       ],
       "hashes": [
         {
-          "alg": "SHA-256",
-          "content": "5af52c26a0cb4c2ac0a158cd6b673bca68234bde42675ad7e7a107c56923ffdd"
+          "content": "5af52c26a0cb4c2ac0a158cd6b673bca68234bde42675ad7e7a107c56923ffdd",
+          "alg": "SHA-256"
         }
       ],
       "scope": "required",
@@ -121,8 +121,8 @@
       ],
       "hashes": [
         {
-          "alg": "SHA-256",
-          "content": "37d4e2f731d12c49778eb898093ec01f25de21039812e8a8c303c4273d4d99e1"
+          "content": "37d4e2f731d12c49778eb898093ec01f25de21039812e8a8c303c4273d4d99e1",
+          "alg": "SHA-256"
         }
       ],
       "scope": "required",
@@ -154,8 +154,8 @@
       ],
       "hashes": [
         {
-          "alg": "SHA-256",
-          "content": "815d6c50ad934a42800e52faef5207dd9352ab8c386793422682084c8f604c5d"
+          "content": "815d6c50ad934a42800e52faef5207dd9352ab8c386793422682084c8f604c5d",
+          "alg": "SHA-256"
         }
       ],
       "scope": "required",
@@ -187,8 +187,8 @@
       ],
       "hashes": [
         {
-          "alg": "SHA-256",
-          "content": "4047e28a10d44be9a0849885df34b5e3a5076e6935c8e679ce5e25540d5dfd52"
+          "content": "4047e28a10d44be9a0849885df34b5e3a5076e6935c8e679ce5e25540d5dfd52",
+          "alg": "SHA-256"
         }
       ],
       "scope": "required",
@@ -207,7 +207,7 @@
   ],
   "dependencies": [
     {
-      "ref": "pkg:generic/batchpdfpublisher@9.25.32",
+      "ref": "pkg:generic/batchpdfpublisher@9.25.42",
       "dependsOn": [
         "pkg:generic/microsoft/vba@7.1",
         "pkg:generic/autodesk/inventor@2027",

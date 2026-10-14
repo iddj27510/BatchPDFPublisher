@@ -1,6 +1,6 @@
 # ROADMAP.md - VBA-DR-01 Batch PDF Publisher
 
-**Version:** 9.25.32
+**Version:** 9.25.42
 **Last updated:** 2026-10-04
 
 Planned features, migration paths, and long-term vision.
@@ -9,7 +9,7 @@ Planned features, migration paths, and long-term vision.
 
 ## Current Status
 
-**v9.25.32** - Release.
+**v9.25.42** - Release.
 
 - 39 deliverable modules + 3 classes + 3 UserForms = 45 components total.
 - 40 tests, all passing (`RunAllTests`).

@@ -3,7 +3,7 @@
 ```markdown
 # Inventor API Gotchas
 
-Version: 9.25.32
+Version: 9.25.42
 Host: Autodesk Inventor 2027, VBA 7.1
 
 Compiled from v8.00 internal technical notes (TN-01..TN-26), v9.x
@@ -98,13 +98,13 @@ This is critical for long-running batches.
 ### TN-15 — `AutoSize = True` on controls
 Autosize is discouraged on labels used as button frames because long
 translations break the layout. Where dynamic sizing is needed (e.g.
-`lblSearch`, or the v9.25.32 scan option toggles), use runtime
+`lblSearch`, or the v9.25.42 scan option toggles), use runtime
 recalculation with a right-edge anchor.
 
 **Order-critical quirk:** MSForms ignores `.Width` / `.Height`
 assignments while `AutoSize` is True. To set an explicit width on an
 auto-sizing label, first set `AutoSize = False`, then assign
-`.Width` / `.Height`. The v9.25.32 `LayoutToggleLabels` procedure
+`.Width` / `.Height`. The v9.25.42 `LayoutToggleLabels` procedure
 in frmScan does this explicitly and documents why.
 
 ### TN-16 — `Font.Bold` and `Font.Weight`
@@ -325,7 +325,7 @@ See `docs/KNOWN_LIMITATIONS.md` §"Ctrl+Z in txtPath" for the full
 analysis.
 
 **Cross-reference:** `modScanPoll` (Win32 SetTimer attempt) was
-written and deleted during v9.25.32 development for exactly this
+written and deleted during v9.25.42 development for exactly this
 reason. See CHANGELOG.md.
 
 ## VBA ceiling

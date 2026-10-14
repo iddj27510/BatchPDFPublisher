@@ -38,7 +38,7 @@ Option Explicit
 '             No decorative separator comment lines.
 
 ' Version and application identity
-Public Const PRJ_VERSION As String = "9.25.32"
+Public Const PRJ_VERSION  As String = "9.25.42"
 Public Const PDF_GUID    As String = "{0AC6FD96-2F4D-42CE-8BE0-8AEA580399E4}"
 
 ' Path and size limits

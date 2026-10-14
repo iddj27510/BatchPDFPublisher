@@ -103,7 +103,7 @@ Expected output:
 
 Add a new entry at the top:
 
-    ## [9.25.32] - YYYY-MM-DD
+    ## [9.25.42] - YYYY-MM-DD
 
     ### Added
     - ...
@@ -120,7 +120,7 @@ Follow Keep a Changelog (https://keepachangelog.com/).
 
 In modConstants.bas:
 
-    Public Const PRJ_VERSION As String = "9.25.32"
+    Public Const PRJ_VERSION As String = "9.25.42"
 
 Sync the same version string in:
 
@@ -140,7 +140,7 @@ Sync the same version string in:
 
 ### 7. Regenerate the SBOM
 
-    .\Build-SBOM.ps1 -Version 9.25.32
+    .\Build-SBOM.ps1 -Version 9.25.42
 
 This reads deps.lock.json, resolves every dependency path, computes
 SHA-256 hashes, and writes sbom.cdx.json. If any dependency cannot
@@ -149,7 +149,7 @@ be resolved, the script fails — see the Dependencies section below.
 ### 8. Commit
 
     git add src/ docs/ CHANGELOG.md README.md deps.lock.json Build-SBOM.ps1 sbom.cdx.json
-    git commit -m "feat: add <feature> (v9.25.32)"
+    git commit -m "feat: add <feature> (v9.25.42)"
 
 Conventional Commits prefixes:
 
@@ -163,7 +163,7 @@ Conventional Commits prefixes:
 
 ### 9. Tag a release
 
-    git tag -a v9.25.32 -m "Release v9.25.32"
+    git tag -a v9.25.42 -m "Release v9.25.42"
     git push --tags
 
 ## Naming conventions
@@ -385,7 +385,7 @@ and causes a compile error.
 
 ## Pattern D — single-label toggle
 
-Since v9.25.32, scan options (`Include subfolders`, `Force recreate`,
+Since v9.25.42, scan options (`Include subfolders`, `Force recreate`,
 `Audit drawings`) are single Labels, not CheckBoxes. Each label
 carries both the background colour and the caption:
 
@@ -411,7 +411,7 @@ focus in MSForms).
 
 Why single Label instead of CheckBox: three MSForms quirks disappear
 at once (first-click after programmatic assignment, programmatic-
-Click side effect, duplicate Click). See `CHANGELOG.md` v9.25.32.
+Click side effect, duplicate Click). See `CHANGELOG.md` v9.25.42.
 
 ## Testing
 

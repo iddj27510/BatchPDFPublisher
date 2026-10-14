@@ -1,6 +1,6 @@
 # Rollback Procedure
 
-**Version:** 9.25.32
+**Version:** 9.25.42
 
 Procedure for reverting Batch PDF Publisher to a previous version.
 
@@ -166,7 +166,7 @@ From Immediate Window:
 
     ? PRJ_VERSION
 
-Expected for this document: 9.25.32
+Expected for this document: 9.25.42
 
 ## Cross-references
 

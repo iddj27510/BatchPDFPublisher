@@ -1,6 +1,6 @@
 # KNOWN_LIMITATIONS.md - VBA-DR-01 Batch PDF Publisher
 
-**Version:** 9.25.32
+**Version:** 9.25.42
 **Last updated:** 2026-10-04
 
 Documented limitations with workarounds. Not bugs - deliberate scope
@@ -8,7 +8,13 @@ boundaries and platform constraints.
 
 ---
 
-## Application Limitations
+## 
+Planned improvements (v10.0.0)
+- frmReport ListBox replaced with Label-grid (eliminates IntegralHeight bug)
+- MouseScroll hook replaced with native subclassing
+- modListBoxFit removed (~1600 LOC reduction)
+
+Application Limitations
 
 ### IDW Format Only
 
@@ -239,7 +245,7 @@ Target: WCAG 2.2 AA within MSForms constraints.
   control layout may not be optimal above 150%.
 - **Live region announcements** — dynamic status updates (lblSum
   changes) are not announced to screen readers. MSForms limitation.
-- **Scan option toggles announced as static text** — the v9.25.32 scan
+- **Scan option toggles announced as static text** — the v9.25.42 scan
   option toggles (Subfolders / Force / Audit) are Labels, not
   CheckBoxes. Labels do not have a `.Value` / checked state. Screen
   readers announce them as static text, not as toggles. Keyboard

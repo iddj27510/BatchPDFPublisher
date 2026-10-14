@@ -65,10 +65,10 @@ None.
 | TD-R22 | PRJ_PathCombine, RP_BuildSummaryText, STATE_ValidateConfig untested | v9.18.2 | 2026-10-02 |
 | TD-R23 | STATE_ValidateEnum substring bug | v9.19.4 | 2026-10-03 |
 | TD-R24 | Report file separator inconsistency (· vs vbTab) | v9.19.4 | 2026-10-03 |
-| TD-R25 | Host version guard used wrong major-version numbers | v9.25.32 | 2026-10-04 |
-| TD-R26 | Checkbox first-click quirk + programmatic-Click side effect | v9.25.32 | 2026-10-04 |
-| TD-R27 | frmProgress / frmReport MouseMove theme flicker | v9.25.32 | 2026-10-04 |
-| TD-R28 | Ctrl+Z in txtPath leaves validation label stale | v9.25.32 | 2026-10-04 |
+| TD-R25 | Host version guard used wrong major-version numbers | v9.25.42 | 2026-10-04 |
+| TD-R26 | Checkbox first-click quirk + programmatic-Click side effect | v9.25.42 | 2026-10-04 |
+| TD-R27 | frmProgress / frmReport MouseMove theme flicker | v9.25.42 | 2026-10-04 |
+| TD-R28 | Ctrl+Z in txtPath leaves validation label stale | v9.25.42 | 2026-10-04 |
 
 ## Won't fix
 
@@ -135,7 +135,7 @@ and turn an uncatchable crash into a loggable warning.
 patterns are load-bearing but not covered by the headless test
 suite. Both are documented in `ARCHITECTURE.md` section 32.4.
 
-### TD-R26: Checkbox → label toggle refactor (v9.25.32)
+### TD-R26: Checkbox → label toggle refactor (v9.25.42)
 
 Two MSForms quirks stacked on the same control:
 
@@ -149,7 +149,7 @@ with an Active/Inactive visual state. Labels have no `.Value` and
 no auto-toggle, so neither quirk applies. Workaround stack
 (`m_bInitializing` guard, debounce gate, flip + force-sync) gone.
 
-### TD-R28: Ctrl+Z validation refresh (v9.25.32)
+### TD-R28: Ctrl+Z validation refresh (v9.25.42)
 
 MSForms consumes Ctrl+Z inside the Windows Edit control before VBA
 sees it. The `Change` event does not fire. Workaround:

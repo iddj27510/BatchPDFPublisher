@@ -1,6 +1,6 @@
 # ARCHITECTURE.md - VBA-DR-01 Batch PDF Publisher
 
-**Version:** 9.25.32
+**Version:** 9.25.42
 **Host:** Autodesk Inventor 2027
 **Runtime:** VBA 7.1
 **Last updated:** 2026-10-04
@@ -119,7 +119,7 @@ The project is organized into 6 layers:
 
 - **Reason:** Flat key->string table for 13 languages. No logic.
 - **Alternative:** 13 modules per language -> 52 modules.
-- **Decision:** Keep as one module. Grew to ~2720 in v9.25.32 with
+- **Decision:** Keep as one module. Grew to ~2720 in v9.25.42 with
   three new badge keys (to_create, to_recreate, force_suffix)
   across all 13 languages.
 
@@ -150,7 +150,18 @@ The project is organized into 6 layers:
 - **Decision:** Keep as one module. Excluded from production builds
   via `#Const PRODUCTION_BUILD`.
 
-### modWinAPI (33 LOC)
+### modListBoxFit (~1600 LOC)
+Reason: Universal ListBox geometry with GDI measurement, caching,
+and calibration. Complex but isolated.
+Decision: Keep as one module. Planned for removal in v10.0.0
+(replaced by Label-grid).
+
+MouseScroll (~1100 LOC)
+Reason: MIT-licensed Cristian Buse implementation for mouse wheel
+scroll on modal/modeless UserForms.
+Decision: Keep until v10.0.0 (replaced by native subclassing).
+
+modWinAPI (33 LOC)
 
 - **Reason:** Shared Win32 declarations (Sleep) with 2 callers.
 - **Decision:** Keep as one module.
@@ -456,8 +467,8 @@ calls, file I/O, business orchestration.
 | frmScan | Folder validation | PRJ_ValidateFolderPath | 1.9 |
 | All forms | Form-level keyboard hook | CKeyPreview class | 7.14 |
 | All forms | Button captions | PRJ_LocalizeCaptions | 18.1 |
-| frmScan | Badge composition | SC_BuildBadgeText (modUIHelpers) | 9.25.32 |
-| frmScan | Toggle colour application | ApplyOneToggle (form-local helper) | 9.25.32 |
+| frmScan | Badge composition | SC_BuildBadgeText (modUIHelpers) | 9.25.42 |
+| frmScan | Toggle colour application | ApplyOneToggle (form-local helper) | 9.25.42 |
 
 ### 12.3 Current state
 
@@ -574,7 +585,7 @@ relevant guard at entry and exit silently if the guard is set.
 See `modValidate.SC_Validate`, `frmScan.BrowseClick`, and
 `frmReport.RP_SetFilter` for reference implementations.
 
-**Historical note (v9.25.32):** the frmScan scan options used to be
+**Historical note (v9.25.42):** the frmScan scan options used to be
 CheckBoxes with an additional reentrancy guard `m_bInitializing`
 (blocks Click during programmatic `.Value` assignment). That guard
 was removed when the controls became Labels — Labels have no
@@ -811,7 +822,7 @@ Header format (required in every .bas and .cls file):
     ' Module    : <name>
     ' Purpose   : <one sentence>
     ' Reference : <Appendix or N/A>
-    ' Version   : 9.25.32 (Inventor 2027)
+    ' Version   : 9.25.42 (Inventor 2027)
     ' <changelog entries, newest first>
     '
     ' Requires  : <list of modules and functions>
@@ -821,7 +832,7 @@ Header format (required in every .bas and .cls file):
 
 Footer format (required at end of every .bas and .cls file):
 
-    ' END: <name> v9.25.32
+    ' END: <name> v9.25.42
 
 UserForms (.frm) do not use header/footer in this format. They have
 a VBE-generated header block plus Attribute declarations, followed
@@ -844,7 +855,7 @@ same information:
 | PROJEKAT | Project-wide constant `PRJ_VERSION` project name "VBA-DR-01" |
 | AUTOR | Project-wide "portfolio-session" / Jugoslav Ilic (LICENSE, README) |
 | DATUM | Project-wide release date 2026-10-04 (CHANGELOG, README) |
-| VERZIJA | `' Version   : 9.25.32 (Inventor 2027)` |
+| VERZIJA | `' Version   : 9.25.42 (Inventor 2027)` |
 | SADRŽAJ | `' #Region` markers in modules > 300 LOC (see 20.3) |
 | ZAVISNOSTI | `' Requires  : <list>` |
 | UPOTREBA | Documented in README.md + docs/ (see README quick start) |
@@ -1584,7 +1595,7 @@ manually via the T01-T11 fixtures.
 **Forms.** UserForm event handlers, hover state, theme application,
 label toggle layout — these require a visible form. UI-level
 regressions (like the v9.18.1 reentrancy bugs, or the v9.19.8 /
-v9.25.32 checkbox quirks) are not caught by the headless test suite.
+v9.25.42 checkbox quirks) are not caught by the headless test suite.
 Manual verification steps are documented in `KNOWN_LIMITATIONS.md`.
 
 **Registry state mutations.** `Test_STATE_ValidateConfig` exercises
@@ -2036,13 +2047,13 @@ Inventor Major version 30 (2026) and 31 (2027). Inventor uses an
 offset of 1996 for `SoftwareVersion.Major`: 2022 is 26, 2023 is
 27, 2024 is 28, 2025 is 29, 2026 is 30, 2027 is 31.
 
-Prior to v9.25.32, the project compared against 26 and 27 believing
+Prior to v9.25.42, the project compared against 26 and 27 believing
 those were Inventor 2026 and 2027. Every user on Inventor 2026 or
 2027 saw the "not officially supported" warning at startup. The
 `HOST_IsSupportedMajor` helper is now the single source of truth,
 consumed by `PRJ_CheckHostVersion` and `PRJ_SelfTest`.
 
-Tracking: TD-R25 (resolved in v9.25.32).
+Tracking: TD-R25 (resolved in v9.25.42).
 
 ### 34.8 CVE response
 
@@ -2230,7 +2241,7 @@ MSForms (FM20.DLL) does not expose:
 - Focus visuals on Label controls — Labels cannot receive focus
 - `AutoScaleMode` — no DPI-independent layout
 - Live region announcements — no dynamic content announcement
-- A checked/unchecked state on Labels — the v9.25.32 scan option
+- A checked/unchecked state on Labels — the v9.25.42 scan option
   toggles are Labels and have no `.Value` property
 
 These are accepted. Full impact analysis and workarounds are in
@@ -2268,7 +2279,7 @@ before release.
 
 ### 36.6 Scan option toggles
 
-The v9.25.32 scan option toggles (`lblOptSub`, `lblOptForce`,
+The v9.25.42 scan option toggles (`lblOptSub`, `lblOptForce`,
 `lblOptAudit`) are Labels, not CheckBoxes. Accessibility impact:
 
 - **Visual state:** accent background when ON, neutral when OFF.
@@ -2474,7 +2485,7 @@ Distribution:
 | Report filters (report.filter.*) | 5 |
 | Summary headers (summary.hdr.*) | 5 |
 
-v9.25.32 added 3 new keys:
+v9.25.42 added 3 new keys:
 `scan.sum.to_create`, `scan.sum.to_recreate`,
 `scan.sum.force_suffix`. Each translated into all 13 languages.
 

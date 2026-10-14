@@ -1,10 +1,95 @@
 # Changelog
 
+[9.25.42] - 2026-10-14
+### Fixed
+- AutoFitListBoxHeight: IntegralHeight snap fix eliminates partial-row scroll bug.
+  When filter returns exactly viewport rows (e.g. OK filter with 26 rows),
+  scroll range=0 no longer occurs.
+
+[9.25.41] - 2026-10-14
+### Fixed
+- MouseScroll: ProcessMouseData now accepts Static/Button/Edit class names.
+  Scroll wheel works when hovering over Label/Button controls.
+
+[9.25.40] - 2026-10-14
+### Changed
+- Status localization via RP_LocalizedStatusBase in frmReport.
+
+[9.25.39] - 2026-10-14
+### Fixed
+- Silent guard when g_colFiles is Nothing in frmReport.
+- APP_TITLE integration in frmReport.
+
+[9.25.38] - 2026-10-14
+### Fixed
+- OK filter scroll fix attempt (DoEvents/SetFocus in RP_SetFilter).
+
+[9.25.37] - 2026-10-14
+### Fixed
+- AutoFitListBoxHeight: IntegralHeight ordering fix.
+  Sets IntegralHeight=False BEFORE assigning lst.Height to prevent
+  scrollbar hiding when list grows after filter switch.
+
+[9.25.36] - 2026-10-14
+### Added
+- Mouse wheel scroll on frmProgress and frmReport (EnableMouseScroll/DisableMouseScroll).
+- Status localization via RP_LocalizedStatusBase.
+
+[9.25.35] - 2026-10-14
+### Changed
+- APP_TITLE constant integration across all forms and error handlers.
+  Product name never translated, identical across all locales.
+
+[9.25.34] - 2026-10-14
+### Fixed
+- FR/PT diacritics in reset.* keys (U() helper for non-ASCII).
+
+[9.25.33] - 2026-10-14
+### Changed
+- Skipped status shortened: "Skipped (exists) - X/Y pages" → "Skipped - X/Y".
+- CJK forms use middle-dot separator to match page_format keys.
+
+
+[9.25.42] - 2026-10-14
+### Added
+- modReportList module (v1.0.0) - Label-based grid replacing ListBox.
+- modWheelHook module - Native subclassing for mouse wheel scroll.
+- Dynamic column width measurement using GDI (FONT_TextWidthPt).
+- Thin scrollbar without arrows (Windows 11 / VS Code style).
+- RL_BuildCells as single source of truth for display strings.
+
+### Changed
+- rmReport migrated from ListBox to Label grid (Opcija B).
+- Removed MouseScroll.bas, MouseOverControl.cls, modListBoxFit.bas (~3000 LOC).
+- Header heights measured once via FONT_CellPt.
+- Data column widths measured from actual g_colFiles content.
+- Final column widths = MAX(header_min, data_min).
+- Path column elastic (takes remaining space).
+- Frame height adjusted to exact row count (no partial rows).
+
+### Fixed
+- IntegralHeight partial-row bug eliminated by construction.
+- MouseScroll hook crashes eliminated (no hook needed).
+- Column width jumping on filter change eliminated (widths fixed after first load).
+
+### Removed
+- MouseScroll.bas (~1100 LOC).
+- MouseOverControl.cls (~200 LOC).
+- modListBoxFit.bas (~1700 LOC).
+- lstReport ListBox control from rmReport designer.
+
+### Notes
+- lblListFrame serves as both visual border and input surface (D37).
+- lblScrollTrack and lblScrollThumb added to designer for scrollbar.
+- Data labels created programmatically on form (not inside frame).
+- Z-order: frame → track → thumb → data labels.
+
+
 All notable changes to Batch PDF Publisher.
 
 Format based on [Keep a Changelog](https://keepachangelog.com/).
 
-## [9.25.32] - 2026-10-13
+## [9.25.42] - 2026-10-13
 
 ### Fixed
 

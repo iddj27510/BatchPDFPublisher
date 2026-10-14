@@ -1,6 +1,6 @@
 # SECURITY.md - VBA-DR-01 Batch PDF Publisher
 
-**Version:** 9.25.32
+**Version:** 9.25.42
 **Last updated:** 2026-10-04
 
 Vulnerability reporting, EU CRA compliance, OWASP mapping, and SBOM

@@ -2,7 +2,7 @@
 
 Status of relevant standards and regulations for Batch PDF Publisher.
 
-**Version:** 9.25.32
+**Version:** 9.25.42
 **Last updated:**  2026-10-04
 **Host:**  Autodesk Inventor 2027
 **Runtime:**  VBA 7.1

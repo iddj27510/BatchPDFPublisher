@@ -1,6 +1,6 @@
 # ACCESSIBILITY.md - VBA-DR-01 Batch PDF Publisher
 
-**Version:** 9.25.32
+**Version:** 9.25.42
 **Last updated:** 2026-10-04
 **Target:** WCAG 2.2 Level AA (partial), ISO/IEC 40500:2025, EN 301 549 V4.1.1
 
@@ -261,7 +261,7 @@ Tab order follows visual order:
 
 Set via designer `TabIndex`; verified by `PRJ_CheckAccessibility`.
 
-Note: the v9.25.32 scan option toggles (`lblOptSub`, `lblOptForce`,
+Note: the v9.25.42 scan option toggles (`lblOptSub`, `lblOptForce`,
 `lblOptAudit`) are Labels and do not receive Tab focus in MSForms.
 They are reachable via `Alt+S` / `Alt+F` / `Alt+A`. They are listed
 above for reference because they carry `TabIndex` in the designer,
@@ -291,7 +291,7 @@ Narrator) interact with MSForms controls via the legacy
   dynamic content announcement.
 - `Label` controls used as button frames are announced as static
   text, not as buttons.
-- The v9.25.32 scan option toggles (`lblOptSub`, `lblOptForce`,
+- The v9.25.42 scan option toggles (`lblOptSub`, `lblOptForce`,
   `lblOptAudit`) are announced as static text — there is no
   "checked"/"unchecked" state because Labels do not have a `.Value`
   property. Keyboard users reach them via `Alt+S` / `Alt+F` /

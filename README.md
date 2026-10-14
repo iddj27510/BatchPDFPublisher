@@ -1,6 +1,6 @@
 # Batch PDF Publisher
 
-[![Version](https://img.shields.io/badge/version-9.25.32-blue?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-9.25.42-blue?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Inventor](https://img.shields.io/badge/Inventor-2026%20%7C%202027-orange?style=flat-square)](https://www.autodesk.com/products/inventor/)
 [![VBA](https://img.shields.io/badge/VBA-7.1-purple?style=flat-square)](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/visual-basic-for-applications)
@@ -12,7 +12,7 @@
 VBA add-in for Autodesk Inventor 2027. Bulk-converts `.idw` drawings
 to PDF. Per-file report with filters and search. Optional drawing audit.
 
-**Version:** 9.25.32
+**Version:** 9.25.42
 **Host:** Autodesk Inventor 2027 (also tested on 2026)
 **Runtime:** VBA 7.1
 **License:** MIT - see LICENSE
@@ -36,8 +36,48 @@ to PDF. Per-file report with filters and search. Optional drawing audit.
   accelerators (Alt+S / Alt+F / Alt+A)
 
 ## Recent improvements
+v9.25.42 - Partial-row scroll fix
+AutoFitListBoxHeight now lets MSForms snap height to whole rows
+by setting IntegralHeight=True before assigning Height, then
+reading back snapped value and freezing with IntegralHeight=False.
+Eliminates clipped partial row causing scroll range=0.
 
-### v9.25.32 - Scan options redesign + undo fix
+v9.25.41 - MouseScroll class-name relaxation
+ProcessMouseData now accepts Static/Button/Edit class names.
+Scroll wheel works when hovering over Label/Button controls.
+
+v9.25.40 - Status localization
+Status localization via RP_LocalizedStatusBase in frmReport.
+
+v9.25.39 - g_colFiles guard + APP_TITLE
+Silent guard when g_colFiles is Nothing. APP_TITLE integration.
+
+v9.25.38 - OK filter scroll fix attempt
+DoEvents/SetFocus in RP_SetFilter (later superseded by v9.25.42).
+
+v9.25.37 - Scrollbar fix
+IntegralHeight ordering fix in AutoFitListBoxHeight.
+
+v9.25.36 - Mouse wheel scroll
+Added mouse wheel scrolling to frmProgress and frmReport.
+
+v9.25.35 - APP_TITLE integration
+Product name constant across all forms and error handlers.
+
+v9.25.34 - FR/PT diacritics fix
+Reset keys now use U() helper for non-ASCII characters.
+
+v9.25.33 - Skipped status shortened
+"Skipped (exists) - X/Y pages" → "Skipped - X/Y".
+v9.25.42 - Label-grid migration
+Report form migrated from MSForms ListBox to programmatic Label grid.
+Eliminates IntegralHeight partial-row bug, MouseScroll hook crashes,
+and modListBoxFit complexity (~3000 LOC removed).
+Dynamic column widths via GDI measurement, language/font/DPI-independent.
+Thin scrollbar without arrows (Windows 11 style).
+Mouse wheel via native subclassing (modWheelHook).
+
+### v9.25.42 - Scan options redesign + undo fix
 
 - **Scan options are now single-label toggles** instead of
   CheckBoxes. `Include subfolders`, `Force recreate`, and
@@ -218,7 +258,7 @@ support cancellation via ESC, and never block the UI.
 
 ## Report format
 
-    Batch PDF Publisher v9.25.32 - Export Report
+    Batch PDF Publisher v9.25.42 - Export Report
     Mode: PDF
     Folder: D:\Projects\PROJ-047\Drawings
     Subfolders: On  Force: Off

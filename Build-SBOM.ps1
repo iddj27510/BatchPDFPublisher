@@ -5,7 +5,7 @@
 #
 # Izlaz: D:\www\VBA-DR-01\sbom.cdx.json
 #
-# v2.4.0 (v9.25.32 alignment):
+# v2.5.0 (v9.25.32 alignment):
 #   Default $Version bumped 9.19.4 -> 9.25.32. Tool version string
 #   in the generated SBOM (metadata.tools[0].version) bumped
 #   2.3.0 -> 2.4.0 to match this script. No script logic changes.
@@ -39,7 +39,7 @@
 
 param(
     [string]$ProjectName         = "BatchPDFPublisher",
-    [string]$Version             = "9.25.32",
+    [string]$Version = "9.25.42",
     [string]$OutputPath          = "",
     [string]$SourceFolder        = "",
     [string]$ManifestPath        = "",
@@ -104,7 +104,7 @@ function Get-FirstExistingPath {
     return ""
 }
 
-Write-Host "Batch PDF Publisher SBOM Generator v2.4.0 (VBA-source)"
+Write-Host "Batch PDF Publisher SBOM Generator v2.5.0 (VBA-source)"
 Write-Host "------------------------------------------------------"
 Write-Host "Project      : $ProjectName"
 Write-Host "Version      : $Version"

@@ -5,7 +5,7 @@
     "name": "BatchPDFPublisher",
     "author": "Jugoslav Ilić",
     "email": "engilic@gmail.com",
-    "version": "9.25.32",
+    "version": "9.25.42",
     "host": "Autodesk Inventor 2027",
     "runtime": "VBA 7.1",
     "distribution": "VBA source (bas/cls/frm)"
