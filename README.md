@@ -1,5 +1,8 @@
 # Batch PDF Publisher
 
+> **New here?** Read [docs/INSTALL_GUIDE.md](docs/INSTALL_GUIDE.md) for a step-by-step install, how to make the toolbar button, and the full usage/keyboard reference (beginner and pro tracks).
+
+
 [![Version](https://img.shields.io/badge/version-9.25.42-blue?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Inventor](https://img.shields.io/badge/Inventor-2026%20%7C%202027-orange?style=flat-square)](https://www.autodesk.com/products/inventor/)
