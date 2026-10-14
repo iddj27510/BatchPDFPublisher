@@ -32,7 +32,7 @@ T10_MultiSheet/
 T11_DWG/
 
 # Keep the empty-folder placeholder
-!T08_EmptyFolder/.gitkeep
+
 
 # Test output PDFs (in case fixtures ever get tracked)
 T01_HappyPath/*.pdf
