@@ -16,7 +16,7 @@ VBA add-in for Autodesk Inventor 2027. Bulk-converts `.idw` drawings
 to PDF. Per-file report with filters and search. Optional drawing audit.
 
 **Version:** 9.25.42
-**Host:** Autodesk Inventor 2027 (also tested on 2026)
+**Host:** Autodesk Inventor 2027
 **Runtime:** VBA 7.1
 **License:** MIT - see LICENSE
 
